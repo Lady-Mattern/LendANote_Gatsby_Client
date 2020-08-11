@@ -1,7 +1,9 @@
 import React from 'react';
 import { navigate } from 'gatsby';
 import { isLoggedIn } from '../services/auth';
+import { createUser } from '../services/auth';
 import { render } from 'react-dom';
+import { handleSignUp } from '../services/auth';    
 
 class SignUp extends React.Component {
     state = {
@@ -19,22 +21,22 @@ class SignUp extends React.Component {
         })
     }
 
-    // handleSubmit = event => {
-    //     event.preventDefault()
-    //     handleSignUp(this.state)
-    // }
+    handleSubmit = event => {
+        event.preventDefault()
+        handleSignUp(this.state)
+    }
 
     render() {
-        // if (isLoggedIn()) {
-        //     navigate(`/app/profile`)
-        // }
+        if (isLoggedIn()) {
+            navigate(`/app/profile`)
+        }
 
         return (
             <div>
                 <form
                     method="post"
                     onSubmit={event => {
-                        this.handleSubmit(event)
+                        this.createUser(event)
                         navigate(`/app/profile`)
                     }} 
                 >

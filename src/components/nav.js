@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, navigate } from 'gatsby';
-import { getUser, isLoggedIn, logout } from '../services/auth';
+import { getUser, isLoggedIn, logout } from '../services/auth';           
 
 export default function Nav() {
     let greetingMessage = "";
@@ -16,7 +16,7 @@ export default function Nav() {
             <nav>
                 <Link to="/aboutPage">About</Link>
                 {` `}
-                <Link to="/signupPage">Sign Up</Link>
+                <Link to="/app/signUp">Sign Up</Link>
                 {` `}
                 <Link to="/app/profile">My Page</Link>
                 {` `}
